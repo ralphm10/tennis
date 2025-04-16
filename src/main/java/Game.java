@@ -1,5 +1,5 @@
 public class Game {
-    private static final int[] POINTS = new int[]{0, 15, 30, 40};
+    private static final int[] DISPLAY_SCORES = new int[]{0, 15, 30, 40};
     public static final int WINNING_SCORE = 3;
     private final Player player1;
     private final Player player2;
@@ -41,8 +41,8 @@ public class Game {
         return player == player1 ? player2 : player1;
     }
 
-    public int convertPoints(int score) {
-        return POINTS[score];
+    public int getDisplayScore(int score) {
+        return DISPLAY_SCORES[score];
     }
 
     public boolean isDeuce() {

@@ -30,7 +30,7 @@ class TennisTest {
     void playerScore15AfterWinningOnePoint() {
         game.winBall(player1);
         int playerScore = player1.getScore();
-        assertEquals(15, game.convertPoints(playerScore));
+        assertEquals(15, game.getDisplayScore(playerScore));
     }
 
     @Test
@@ -38,7 +38,7 @@ class TennisTest {
         game.winBall(player1);
         game.winBall(player1);
         int playerScore = player1.getScore();
-        assertEquals(30, game.convertPoints(playerScore));
+        assertEquals(30, game.getDisplayScore(playerScore));
     }
 
     @Test
@@ -47,7 +47,7 @@ class TennisTest {
             game.winBall(player1);
         }
         int playerScore = player1.getScore();
-        assertEquals(40, game.convertPoints(playerScore));
+        assertEquals(40, game.getDisplayScore(playerScore));
     }
 
     @Test
