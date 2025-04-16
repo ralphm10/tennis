@@ -17,6 +17,8 @@ public class Player {
 
     public void winGame() {
         games ++;
+        points = 0;
+        advantage = false;
     }
 
     public boolean hasAdvantage() {

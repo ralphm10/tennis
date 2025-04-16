@@ -97,4 +97,26 @@ class TennisTest {
         game.winBall(player2);
         assertTrue(game.isDeuce());
     }
+
+    @Test
+    void scoresAreResetAfterGame() {
+        for (int i = 0; i < 4; i++) {
+            game.winBall(player1);
+        }
+        assertEquals(1, player1.getGames());
+        assertEquals(0, player1.getScore());
+    }
+
+    @Test
+    void advantageIsResetAfterGame() {
+        setDeuce();
+
+        game.winBall(player1);
+        assertTrue(player1.hasAdvantage());
+
+        game.winBall(player1);
+
+        assertEquals(1, player1.getGames());
+        assertFalse(player1.hasAdvantage());
+    }
 }
